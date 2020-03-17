@@ -2,6 +2,66 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.shiqiye.dao.LianluoMapper">
-  	
-  </mapper>
+<mapper namespace="com.shiqiye.dao.LianluoMapper">
+	<select id="selects" resultType="Lianluo">
+		select * from lianluo
+		<where>
+			<if test="lianluo_id!=null and lianluo_id!=''">
+				and lianluo_id like '%' #{lianluo_id} '%'
+			</if>
+
+			<if test="zhizaobu_id!=null and zhizaobu_id!=''">
+				and zhizaobu_id like '%' #{zhizaobu_id} '%'
+			</if>
+
+			<if test="zhizaobu_name!=null and zhizaobu_name!=''">
+				and zhizaobu_name like '%' #{zhizaobu_name} '%'
+			</if>
+
+			<if test="shebei_id!=null and shebei_id!=''">
+				and shebei_id like '%' #{shebei_id} '%'
+			</if>
+
+			<if test="shebei_name!=null and shebei_name!=''">
+				and shebei_name like '%' #{shebei_name} '%'
+			</if>
+
+			<if test="jiagong_dw!=null and jiagong_dw!=''">
+				and jiagong_dw like '%' #{jiagong_dw} '%'
+			</if>
+
+			<if test="jiagong_name!=null and jiagong_name!=''">
+				and jiagong_name like '%' #{jiagong_name} '%'
+			</if>
+
+			<if test="shouhuo_name!=null and shouhuo_name!=''">
+				and shouhuo_name like '%' #{shouhuo_name} '%'
+			</if>
+
+			<if test="caigou_name1!=null and caigou_name1!=''">
+				and caigou_name1 like '%' #{caigou_name1} '%'
+			</if>
+			<if test="beizhu!=null and beizhu!=''">
+				and beizhu like '%' #{beizhu} '%'
+			</if>
+			<if test="P1!=null and P1!=''">
+				and songhui_date >=P1
+			</if>
+			<if test="P12=null and P2!=''">
+				and songhui_date &lt;=P2
+			</if>
+		</where>
+	</select>
+	
+	<select id="peijian" resultType="Peijian">
+		select * from peijian
+	</select>
+	
+	<select id="peijian_id" resultType="String">
+		select peijian_id from peijian where id=#{id}
+	</select>
+	
+	<insert id="addlianluo" >
+		inset into lianluo values(#{lianluo_id},#{baosong_date},#{zhizaobu_name},#{zhizaobu_id},#{peijian_id},#{cankao_money},#{num},#{jine_money},#{juti},#{shebei_id},#{shebei_name},#{waisong_date},#{shenhe_danjia_money},#{shenhe_jine_money},#{fahuoren_name},#{jiagong_price},#{jiagong_dw})
+	</insert>
+</mapper>

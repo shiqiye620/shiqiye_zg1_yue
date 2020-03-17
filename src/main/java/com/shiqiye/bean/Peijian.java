@@ -1,6 +1,10 @@
 package com.shiqiye.bean;
 
 public class Peijian {
+	@Override
+	public String toString() {
+		return "Peijian [id=" + id + ", peijian_name=" + peijian_name + ", peijian_id=" + peijian_id + "]";
+	}
 	private Integer id;
 	private String peijian_name;
 	private String peijian_id;

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Lianluo {
 	private Integer id;
-	private Integer lianluo_id;
+	private String lianluo_id;
 	private String baosong_date;
 	private String zhizaobu_name;
 	private String zhizaobu_id;
@@ -19,23 +19,19 @@ public class Lianluo {
 	private Double shenhe_danjia_money;
 	private Double shenhe_jine_money;
 	private String fahuoren_name;
-	private String jiagong_price;
-	private String jiagong_dw;
-	private String jiagong_name;
-	private String jiagong_danjia_money;
-	private String jiagong_jine_money;
-	private String songhui_date;
-	private String shouhuo_name;
-	private String caigou_name1 ;
-	private String caigou_name2;
-	private String beizhu;
-	private List<Peijian> peijains;
-	
-	public List<Peijian> getPeijains() {
-		return peijains;
+	private String P1;
+	private String P2;
+	public String getP1() {
+		return P1;
 	}
-	public void setPeijains(List<Peijian> peijains) {
-		this.peijains = peijains;
+	public void setP1(String p1) {
+		P1 = p1;
+	}
+	public String getP2() {
+		return P2;
+	}
+	public void setP2(String p2) {
+		P2 = p2;
 	}
 	public Integer getId() {
 		return id;
@@ -43,10 +39,10 @@ public class Lianluo {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getLianluo_id() {
+	public String getLianluo_id() {
 		return lianluo_id;
 	}
-	public void setLianluo_id(Integer lianluo_id) {
+	public void setLianluo_id(String lianluo_id) {
 		this.lianluo_id = lianluo_id;
 	}
 	public String getBaosong_date() {
@@ -81,6 +77,19 @@ public class Lianluo {
 	}
 	public Integer getNum() {
 		return num;
+	}
+	@Override
+	public String toString() {
+		return "Lianluo [id=" + id + ", lianluo_id=" + lianluo_id + ", baosong_date=" + baosong_date
+				+ ", zhizaobu_name=" + zhizaobu_name + ", zhizaobu_id=" + zhizaobu_id + ", peijian_id=" + peijian_id
+				+ ", cankao_money=" + cankao_money + ", num=" + num + ", jine_money=" + jine_money + ", juti=" + juti
+				+ ", shebei_id=" + shebei_id + ", shebei_name=" + shebei_name + ", waisong_date=" + waisong_date
+				+ ", shenhe_danjia_money=" + shenhe_danjia_money + ", shenhe_jine_money=" + shenhe_jine_money
+				+ ", fahuoren_name=" + fahuoren_name + ", P1=" + P1 + ", P2=" + P2 + ", jiagong_price=" + jiagong_price
+				+ ", jiagong_dw=" + jiagong_dw + ", jiagong_name=" + jiagong_name + ", jiagong_danjia_money="
+				+ jiagong_danjia_money + ", jiagong_jine_money=" + jiagong_jine_money + ", songhui_date=" + songhui_date
+				+ ", shouhuo_name=" + shouhuo_name + ", caigou_name1=" + caigou_name1 + ", caigou_name2=" + caigou_name2
+				+ ", beizhu=" + beizhu + ", peijains=" + peijains + "]";
 	}
 	public void setNum(Integer num) {
 		this.num = num;
@@ -193,6 +202,24 @@ public class Lianluo {
 	public void setBeizhu(String beizhu) {
 		this.beizhu = beizhu;
 	}
+	public List<Peijian> getPeijains() {
+		return peijains;
+	}
+	public void setPeijains(List<Peijian> peijains) {
+		this.peijains = peijains;
+	}
+	private String jiagong_price;
+	private String jiagong_dw;
+	private String jiagong_name;
+	private String jiagong_danjia_money;
+	private String jiagong_jine_money;
+	private String songhui_date;
+	private String shouhuo_name;
+	private String caigou_name1 ;
+	private String caigou_name2;
+	private String beizhu;
+	private List<Peijian> peijains;
+	
 	
 	
 }
