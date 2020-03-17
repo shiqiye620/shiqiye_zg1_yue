@@ -78,4 +78,10 @@ public class LianluoController {
 		return lianluoService.insert(lianluo,peijian)>0;//增加文章;
 	}
 	
+	@RequestMapping("toUpdate")
+	private String toUpdate() {
+		return "update";
+	}
+	
+	
 }
